@@ -1,0 +1,20 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+  steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.11'
+
+  - script: |
+      pip install tensorflow pandas numpy matplotlib
+    displayName: 'Install dependencies'
+  
+  - script: |
+      export MPLBACKEND=Agg
+      python fashion_mnist_classifier.py
+    displayName: "Run training script"
+    
