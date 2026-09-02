@@ -15,5 +15,5 @@ steps:
   
 - script: |
     export MPLBACKEND=Agg
-    python fashion_mnist_classifier.py
+    python classifier_code.py
   displayName: "Run training script"
